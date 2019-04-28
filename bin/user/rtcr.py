@@ -1855,7 +1855,7 @@ class VectorBuffer(object):
         """Add a value to my hilo and history stats as required."""
 
         (w_speed, w_dir) = val
-        if w_speed is not None:
+        if not None in (w_speed, w_dir):
             if self.lasttime is None or ts >= self.lasttime:
                 self.last = (w_speed, w_dir)
                 self.lasttime = ts
